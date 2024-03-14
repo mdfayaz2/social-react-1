@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useContext, createContext, useState } from "react";
+import Login from "./components/user/Login.js";
+import { AppContext } from "./context/appContext.js";
+import Home from "./components/home/Home.js";
+import Navbar from "./components/navbar/Navbar.js";
+import Album from "./components/album/Album.js";
+import Footer from "./components/footer/Footer.js";
 
 function App() {
+  const PATH = process.env.REACT_APP_PATH;
+  const { flag, setFlag } = useContext(AppContext);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {flag < 2 ? (
+        <Login />
+      ) : (
+        <Router>
+          <Navbar />
+          <hr></hr>
+          <Routes>
+            <Route path={`${PATH}/`} element={<Home />} />
+            <Route path={`${PATH}/album`} element={<Album />} />
+            </Routes>
+          <Footer />
+        </Router>
+       
+      )}
     </div>
   );
 }
-
 export default App;
