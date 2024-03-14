@@ -5,28 +5,32 @@ export default function () {
     <>
       <div className="Footer-container">
         <div>
-          <h3>About us</h3>
-          Coffeehouse<br></br>
-          Our Company<br></br>
-          Our Heritage<br></br>
+          <h3>Overview</h3>
+          Abouts<br></br>
+          Customer Service<br></br>
+          What's New<br></br>
+          Contact Us<br></br>
         </div>
         <div>
-          <h3>Quick Links</h3>
-          Privacy Policy<br></br>
-          Delivery<br></br>
-          Season's Gifting<br></br>
+          <h3>Resources</h3>
+          Help Center<br></br>
+          Ebook Library<br></br>
+          Affiliates<br></br>
+          Blogs<br></br>
         </div>
         <div>
-          <h3>Our Responsibility</h3>
-          Community<br></br>
-          Ethical Sourcing<br></br>
-          Diversity<br></br>
+          <h3>Solutions</h3>
+          Small Business<br></br>
+          Restaurant<br></br>
+          Artists<br></br>
+          Bloggers<br></br>
         </div>
         <div>
-          <h3>Social Media</h3>
-          Facebook<br></br>
-          Twitter<br></br>
-          Instagram
+          <h3>Products</h3>
+          Pages<br></br>
+          E-Store<br></br>
+          Learning<br></br>
+          Corporate<br></br>
         </div>
       </div>
          <div className="Footer-bottom">
