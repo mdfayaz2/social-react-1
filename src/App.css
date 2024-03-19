@@ -1,7 +1,35 @@
 .App {
-  text-align: center;
+  display:flex;
+margin: auto;
 }
 
+.App-head {
+  display: flex;
+  background-color: navy;
+  color: white;
+  justify-content:space-between;
+}
+
+.App-title {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.App-user {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+
+.App-sidemenu {
+  width:25%;
+  position:absolute;
+  /* justify-content: start; */
+}
+
+.App-content {
+  width:75%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

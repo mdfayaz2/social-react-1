@@ -6,7 +6,7 @@ import { AppContext } from "../../context/appContext";
 export default function Home() {
   const {user} = useContext(AppContext)
   const url = `https://jsonplaceholder.typicode.com/posts/`;
-  const [data] = useFetch(url);
+  const data = useFetch(url);
   return (
     <div>
       <h1>News Feeds</h1>

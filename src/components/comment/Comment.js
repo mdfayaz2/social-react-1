@@ -4,7 +4,7 @@ import { AppContext } from "../../context/appContext";
 export default function Comment(props) {
   const { user } = useContext(AppContext);
   const url = `https://jsonplaceholder.typicode.com/comments/?postId=${props.id}`;
-  const [data] = useFetch(url);
+  const data = useFetch(url);
   return (
     <div>
       <details>

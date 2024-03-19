@@ -6,10 +6,10 @@ import { AppContext } from "../../context/appContext";
 export default function Post() {
   const {user} = useContext(AppContext)
   const url = `https://jsonplaceholder.typicode.com/posts/?userId=${user.email}`;
-  const [data] = useFetch(url);
+  const data = useFetch(url);
   return (
     <div>
-      <h1>News Feeds</h1>
+      <h1>My Posts</h1>
       <div className="Post-container">
         {data &&
           data.map((elem) => (

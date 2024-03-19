@@ -4,7 +4,7 @@ import { AppContext } from "../../context/appContext";
 export default function Album() {
   const {user} = useContext(AppContext)
   const url = `https://jsonplaceholder.typicode.com/albums/?userId=${user.email}`;
-  const [data] = useFetch(url);
+  const data = useFetch(url);
   return (
     <div>
       <h1>Albums</h1>

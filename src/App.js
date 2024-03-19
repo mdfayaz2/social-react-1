@@ -11,26 +11,34 @@ import Footer from "./components/footer/Footer.js";
 
 function App() {
   const PATH = process.env.REACT_APP_PATH;
-  const { flag, setFlag } = useContext(AppContext);
+  const { flag, setFlag, user } = useContext(AppContext);
 
   return (
-    <div className="App">
+    <>
       {flag < 2 ? (
         <Login />
       ) : (
         <Router>
-          <Navbar />
-          <hr></hr>
-          <Routes>
-            <Route index path={`${PATH}/`}  element={<Home />} />
-            <Route path={`${PATH}/post`} element={<Post />} />
-            <Route path={`${PATH}/album`} element={<Album />} />
-            </Routes>
+          <div className="App-head">
+            <div className="App-title">Social Media </div>
+            <div className="App-user">{user.name}</div>
+          </div>
+          <div className="App">
+            <div className="App-sidemenu">
+              <Navbar />
+            </div>
+            <div className="App-content">
+              <Routes>
+                <Route index path={`${PATH}/`} element={<Home />} />
+                <Route path={`${PATH}/post`} element={<Post />} />
+                <Route path={`${PATH}/album`} element={<Album />} />
+              </Routes>
+            </div>
+          </div>
           <Footer />
         </Router>
-       
       )}
-    </div>
+    </>
   );
 }
 export default App;
