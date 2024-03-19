@@ -1,21 +1,19 @@
 import React, { useContext } from "react";
 import { useFetch } from "../../useFetch";
-import Homeitems from "./Homeitems";
-import "./Home.css"
+import Postitems from "./Postitems";
 import { AppContext } from "../../context/appContext";
-export default function Home() {
+export default function Post() {
   const {user} = useContext(AppContext)
-  const url = `https://jsonplaceholder.typicode.com/posts/`;
+  const url = `https://jsonplaceholder.typicode.com/posts/?userId=${user.email}`;
   const [data] = useFetch(url);
   return (
     <div>
       <h1>News Feeds</h1>
-      <div className="Home-container">
+      <div >
         {data &&
           data.map((elem) => (
             <div key={elem.id}>
-              {/* {elem.userId}-{elem.title}-{elem.body} */}
-              <Homeitems item={elem} />
+              <Postitems item={elem} />
               <hr></hr>
             </div>
            

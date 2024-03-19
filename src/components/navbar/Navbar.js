@@ -18,6 +18,7 @@ export default function Navbar() {
       </div>
       <div className="links">
         <Link to={`${PATH}/`}> Home </Link>
+        <Link to={`${PATH}/post`}> Post </Link>
         <Link to={`${PATH}/album`}> Album </Link>
         <Link to={`${PATH}/`} onClick={handleLogout}>
           Logout

@@ -6,6 +6,7 @@ import { AppContext } from "./context/appContext.js";
 import Home from "./components/home/Home.js";
 import Navbar from "./components/navbar/Navbar.js";
 import Album from "./components/album/Album.js";
+import Post from "./components/post/Post.js";
 import Footer from "./components/footer/Footer.js";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <hr></hr>
           <Routes>
             <Route index path={`${PATH}/`}  element={<Home />} />
+            <Route path={`${PATH}/post`} element={<Post />} />
             <Route path={`${PATH}/album`} element={<Album />} />
             </Routes>
           <Footer />
