@@ -21,7 +21,7 @@ function App() {
           <Navbar />
           <hr></hr>
           <Routes>
-            <Route path={`${PATH}/`} element={<Home />} />
+            <Route index path={`${PATH}/`}  element={<Home />} />
             <Route path={`${PATH}/album`} element={<Album />} />
             </Routes>
           <Footer />

@@ -12,7 +12,7 @@ export default function Navbar() {
   };
   return (
     <div className="navbar">
-      <div className="title">Social React</div>
+      <div className="title">Social Media</div>
       <div>
         <h3>Hi {user.name}!</h3>
       </div>
