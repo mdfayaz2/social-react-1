@@ -12,10 +12,10 @@ export default function Login() {
   const [msg, setMsg] = useState();
 
   const validateUser = () => {
-    // const found = users.find((elem) => elem.id === parseInt(user.email));
-    const found = users.find(
-      (elem) => elem.email === user.email && elem.pass === user.pass
-    );
+    const found = users.find((elem) => elem.id === parseInt(user.email));
+    // const found = users.find(
+    //   (elem) => elem.email === user.email && elem.pass === user.pass
+    // );
     if (found) {
       setUser((prev) => ({ ...prev, name: found.name }));
       setFlag(() => 2);
