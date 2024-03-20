@@ -10,10 +10,10 @@ export default function Login() {
     useContext(AppContext);
   const [visible, setvisible] = useState(false);
   const [msg, setMsg] = useState();
-  // (elem) => elem.email === user.email && elem.pass === user.pass
-  const validateUser = () => {
-    const found = users.find((elem) => elem.id === parseInt(user.email));
 
+  const validateUser = () => {
+    // const found = users.find((elem) => elem.id === parseInt(user.email));
+    const found =  (elem) => elem.email === user.email && elem.pass === user.pass;
     if (found) {
       setUser((prev) => ({ ...prev, name: found.name }));
       setFlag(() => 2);

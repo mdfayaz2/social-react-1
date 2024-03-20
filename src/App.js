@@ -20,7 +20,7 @@ function App() {
       ) : (
         <Router>
           <div className="App-head">
-            <div className="App-title">Social Media </div>
+            <div className="App-title">Social-React</div>
             <div className="App-user">{user.name}</div>
           </div>
           <div className="App">

@@ -11,7 +11,6 @@ export const AppContextProvider = (props) => {
 
   useEffect(() => {
     setUsers(data);
-    console.log(users)
   }, [user]);
 
   const val = {

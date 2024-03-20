@@ -2,12 +2,13 @@ import React from "react";
 import "./Register.css";
 import { useContext, useState } from "react";
 import { AppContext } from "../../context/appContext";
+import axios from "axios";
 export default function Register() {
   const [msg, setMsg] = useState();
   const { user, setUser, users, setUsers, flag, setFlag } =
     useContext(AppContext);
 
-  const newUser = () => {
+  const newUser = async () => {
     if (Object.keys(user).length < 2) {
       setMsg(() => "Please complete the form");
     } else if (user.name === "" || user.email === "" || user.pass === "") {
@@ -15,6 +16,17 @@ export default function Register() {
     } else {
       setUsers((prev) => [...prev, user]);
       setFlag(() => 2);
+      /////// backend /////
+      // user.role = "user";
+      // const result = await axios.post("http://localhost:8080/signup/", user);
+      // console.log(result.data);
+      // setUser({
+      //   name: result.data.user.name,
+      //   email: result.data.user.email,
+      //   token: result.data.token,
+      // });
+      /////////
+      
     }
   };
 
@@ -28,8 +40,9 @@ export default function Register() {
             &times;
           </div>
         </div>
-        <div >
-          <input className="Register-text-box"
+        <div>
+          <input
+            className="Register-text-box"
             required
             onChange={(e) =>
               setUser((prev) => ({ ...prev, name: e.target.value }))
@@ -39,7 +52,8 @@ export default function Register() {
           ></input>
         </div>
         <div>
-          <input className="Register-text-box"
+          <input
+            className="Register-text-box"
             onChange={(e) =>
               setUser((prev) => ({ ...prev, email: e.target.value }))
             }
@@ -47,7 +61,8 @@ export default function Register() {
           ></input>
         </div>
         <div>
-          <input className="Register-text-box"
+          <input
+            className="Register-text-box"
             onChange={(e) =>
               setUser((prev) => ({ ...prev, pass: e.target.value }))
             }
@@ -57,7 +72,10 @@ export default function Register() {
         </div>
 
         <div>
-          <button className="Register-btn" onClick={newUser}> Sign Up</button>
+          <button className="Register-btn" onClick={newUser}>
+            {" "}
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
