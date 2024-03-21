@@ -2,6 +2,7 @@ import React from 'react'
 import Comment from '../comment/Comment'
 export default function Homeitems(props) {
     const item = props.item
+    console.log(item.id)
   return (
     <div>
         <div>{item.userId}</div>
