@@ -5,21 +5,33 @@ import Register from "./Register";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 import { useState } from "react";
+import axios from "axios";
 export default function Login() {
   const { user, setUser, users, setUsers, flag, setFlag } =
     useContext(AppContext);
   const [visible, setvisible] = useState(false);
   const [msg, setMsg] = useState();
-
-  const validateUser = () => {
+  // (elem) => elem.email === user.email && elem.pass === user.pass
+  const validateUser = async () => {
     // const found = users.find((elem) => elem.id === parseInt(user.email));
-    const found = users.find(
-      (elem) => elem.email === user.email && elem.pass === user.pass
-    );
-    if (found) {
-      setUser((prev) => ({ ...prev, name: found.name }));
+    try {
+      const found = await axios.post("http://localhost:8080/signin/", user);
+      setUser((prev) => ({
+        ...prev,
+        name: found.data.user.name,
+        email: found.data.user.email,
+        role:found.data.user.role,
+        token: found.data.token,
+      }));
       setFlag(() => 2);
-    } else setMsg(() => "Invalid email or password");
+    } catch (err) {
+      setMsg(() => "Invalid email or password");
+    }
+    // console.log(found.status);
+    // if (found) {
+    //   setUser((prev) => ({ ...prev, name: found.name }));
+    //   setFlag(() => 2);
+    // } else setMsg(() => "Invalid email or password");
   };
   return (
     <>
@@ -65,7 +77,7 @@ export default function Login() {
           <br></br>
           <div>Forgot Password?</div>
           <br></br>
-          <div>
+          <div style={{textAlign:'center'}}>
             <button
               className="Login-register-btn"
               onClick={() => setFlag(() => 1)}

@@ -1,13 +1,11 @@
 import React from 'react'
 import Comment from '../comment/Comment'
 export default function Postitems(props) {
-    const item = props.item
+    const elem = props.elem
   return (
     <div>
-        <div>{item.userId}</div>
-        <div>{item.title}</div>
-        <div>{item.body}</div>
-        <Comment id={item.id}/>
+        <div>{elem.item}<br></br> <img src={elem.file}/></div>
+        {/* <Comment id={item._id}/> */}
     </div>
   )
 }

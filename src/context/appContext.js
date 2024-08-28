@@ -6,12 +6,7 @@ export const AppContextProvider = (props) => {
   const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
   const [flag, setFlag] = useState(0);
-  // const [data] = useFetch("https://jsonplaceholder.typicode.com/users/")
-  // const data = useFetch("https://jsonplaceholder.typicode.com/users/")
 
-  // useEffect(() => {
-  //   setUsers(data);
-  // }, [user]);
 
   const val = {
     flag,

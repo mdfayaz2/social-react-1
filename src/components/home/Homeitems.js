@@ -1,14 +1,13 @@
 import React from 'react'
 import Comment from '../comment/Comment'
 export default function Homeitems(props) {
-    const item = props.item
-    console.log(item.id)
+    const elem = props.elem
   return (
     <div>
-        <div>{item.userId}</div>
-        <div>{item.title}</div>
-        <div>{item.body}</div>
-        <Comment id={item.id}/>
+        <div>{elem.users[0].name} - {elem.item}<br></br>
+        <img style={{width:'100%'}} src={elem.file}/>
+        </div>
+        {/* <Comment id={item.id}/> */}
     </div>
   )
 }

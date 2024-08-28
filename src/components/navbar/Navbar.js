@@ -13,20 +13,16 @@ export default function Navbar() {
   return (
     <div className="navbar">
      
-      <p>
-        <Link to={`${PATH}/`}> Home </Link>
-      </p>
-      <p>
-        <Link to={`${PATH}/post`}> Post </Link>
-      </p>
-      <p>
-        <Link to={`${PATH}/album`}> Album </Link>
-      </p>
-      <p>
-        <Link to={`${PATH}/`} onClick={handleLogout}>
+
+        <Link className="links" to={`${PATH}/`}> Home </Link>
+   
+   
+        {/* <Link className="links" to={`${PATH}/post`}> Post </Link> */}
+ 
+        <Link className="links" to={`${PATH}/`} onClick={handleLogout}>
           Logout
         </Link>
-      </p>
+   
     </div>
   );
 }

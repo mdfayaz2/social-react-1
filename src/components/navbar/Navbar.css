@@ -1,8 +1,8 @@
 .navbar {
-    /* width: 1200px; */
-    height: 80px;
+    display: inline-block;
     margin:auto;
     padding: 10px;
+    color: whitesmoke;
   }
 
   .navbar p{
@@ -13,13 +13,14 @@
   .title {
     margin-left: 20px;
     font-size: 35px;
-    color: navy;
+    color: whitesmoke;
 
   }
   
   .links {
     margin-right: 20px;
     align-items: center;
+    color: whitesmoke;
 
   }
   
@@ -27,6 +28,7 @@
     text-decoration: none;
     margin-left: 20px;
     font-size: 25px;
+    color: whitesmoke;
   }
 
   .links a:hover{

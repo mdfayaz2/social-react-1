@@ -5,7 +5,8 @@ import "./Post.css"
 import { AppContext } from "../../context/appContext";
 export default function Post() {
   const {user} = useContext(AppContext)
-  const url = `https://jsonplaceholder.typicode.com/posts/?userId=${user.email}`;
+  // const url = `https://jsonplaceholder.typicode.com/posts/?userId=${user.email}`;
+  const url = `http://localhost:8080/post/`
   const data = useFetch(url);
   return (
     <div>
@@ -13,8 +14,8 @@ export default function Post() {
       <div className="Post-container">
         {data &&
           data.map((elem) => (
-            <div key={elem.id}>
-              <Postitems item={elem} />
+            <div key={elem._id}>
+              <Postitems elem={elem} />
               <hr></hr>
             </div>
            

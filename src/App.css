@@ -1,13 +1,14 @@
 .App {
-  display:flex;
-margin: auto;
+  display: flex;
+  align-items:start;
+
 }
 
 .App-head {
   display: flex;
   background-color: navy;
   color: white;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .App-title {
@@ -20,16 +21,20 @@ margin: auto;
   margin-right: 10px;
 }
 
-
 .App-sidemenu {
-  width:25%;
-  position:absolute;
-  /* justify-content: start; */
+  /* position:absolute; */
+  width:20%;
+  background-color: #eeeeee;
+  margin: 5px;
+  height: 500px;
+  border-radius: 20px;
+  text-align: center;
 }
 
 .App-content {
-  width:75%;
+  width: 50%;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -60,6 +65,7 @@ margin: auto;
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

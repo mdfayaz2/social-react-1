@@ -5,7 +5,6 @@ import Login from "./components/user/Login.js";
 import { AppContext } from "./context/appContext.js";
 import Home from "./components/home/Home.js";
 import Navbar from "./components/navbar/Navbar.js";
-import Album from "./components/album/Album.js";
 import Post from "./components/post/Post.js";
 import Footer from "./components/footer/Footer.js";
 
@@ -20,21 +19,23 @@ function App() {
       ) : (
         <Router>
           <div className="App-head">
-            <div className="App-title">Social-React</div>
-            <div className="App-user">{user.name}</div>
-          </div>
-          <div className="App">
-            <div className="App-sidemenu">
+            <div className="App-title">social-mern </div>
+            <div className="App-user">
+              {" "}
               <Navbar />
             </div>
+          </div>
+          <div className="App">
+            <div className="App-sidemenu">[{user.name}]</div>
             <div className="App-content">
               <Routes>
                 <Route index path={`${PATH}/`} element={<Home />} />
-                <Route path={`${PATH}/post`} element={<Post />} />
-                <Route path={`${PATH}/album`} element={<Album />} />
+                {/* <Route path={`${PATH}/post`} element={<Post />} /> */}
               </Routes>
             </div>
+            <div className="App-sidemenu">fdfdsffdfsf</div>
           </div>
+
           <Footer />
         </Router>
       )}
