@@ -1,45 +1,60 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useContext, createContext, useState } from "react";
-import Login from "./components/user/Login.js";
-import { AppContext } from "./context/appContext.js";
-import Home from "./components/home/Home.js";
-import Navbar from "./components/navbar/Navbar.js";
-import Post from "./components/post/Post.js";
-import Footer from "./components/footer/Footer.js";
+import React, { useState } from 'react';
+import './App.css';
 
 function App() {
-  const PATH = process.env.REACT_APP_PATH;
-  const { flag, setFlag, user } = useContext(AppContext);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleRegisterClick = () => {
+    setIsActive(true);
+  };
+
+  const handleLoginClick = () => {
+    setIsActive(false);
+  };
 
   return (
-    <>
-      {flag < 2 ? (
-        <Login />
-      ) : (
-        <Router>
-          <div className="App-head">
-            <div className="App-title">social-mern </div>
-            <div className="App-user">
-              {" "}
-              <Navbar />
-            </div>
-          </div>
-          <div className="App">
-            <div className="App-sidemenu">[{user.name}]</div>
-            <div className="App-content">
-              <Routes>
-                <Route index path={`${PATH}/`} element={<Home />} />
-                {/* <Route path={`${PATH}/post`} element={<Post />} /> */}
-              </Routes>
-            </div>
-            <div className="App-sidemenu">fdfdsffdfsf</div>
-          </div>
+    <div className={`container ${isActive ? 'active' : ''}`} id="container">
+      <div className="form-container sign-up">
+        <form>
+          <h1>Create Account</h1>
+          <span>or use your email for registration</span>
+          <input type="text" placeholder="Referral ID" />
+          <input type="text" placeholder="Username" />
+          <input type="tel" placeholder="Phone Number" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Confirm Password" />
+          <input type="text" placeholder="Address" />
+          <button type="button">Sign Up</button>
+        </form>
+      </div>
+      <div className="form-container sign-in">
+        <form>
+          <h1>LOGIN</h1>
 
-          <Footer />
-        </Router>
-      )}
-    </>
+          <span>or use your email password</span>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forget Your Password?</a>
+          <button type="button">LOGIN</button>
+        </form>
+      </div>
+      <div className="toggle-container">
+        <div className="toggle">
+          <div className="toggle-panel toggle-left">
+            <h1>Welcome Back!</h1>
+            <p>Enter your personal details to use all of the site's features</p>
+            <button className="hidden" id="login" onClick={handleLoginClick}>LOGIN</button>
+          </div>
+          <div className="toggle-panel toggle-right">
+            <h1>Hello, Friend!</h1>
+            <p>Register with your personal details to use all of the site's features</p>
+            <button className="hidden" id="register" onClick={handleRegisterClick}>Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
+
 export default App;
